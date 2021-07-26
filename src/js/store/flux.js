@@ -1,42 +1,44 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
-			demo: [
-				{
-					title: "FIRST",
-					background: "white",
-					initial: "white"
-				},
-				{
-					title: "SECOND",
-					background: "white",
-					initial: "white"
-				}
-			]
+			peopleList: [],
+			planetList: [],
+			vehicleList: [],
+			favList: [],
+			isHome: ""
 		},
 		actions: {
-			// Use getActions to call a function within a fuction
-			exampleFunction: () => {
-				getActions().changeColor(0, "green");
+			listaCharacters: () => {
+				fetch("https://swapi.dev/api/people/", {
+					method: "GET"
+				})
+					.then(res => res.json())
+					.then(data => setStore({ peopleList: data.results }));
 			},
-			loadSomeData: () => {
-				/**
-					fetch().then().then(data => setStore({ "foo": data.bar }))
-				*/
+
+			listaPlanets: () => {
+				fetch("https://swapi.dev/api/planets/", {
+					method: "GET"
+				})
+					.then(res => res.json())
+					.then(data => setStore({ planetList: data.results }));
 			},
-			changeColor: (index, color) => {
-				//get the store
+
+			listaVehicles: () => {
+				fetch("https://swapi.dev/api/vehicles/", {
+					method: "GET"
+				})
+					.then(res => res.json())
+					.then(data => setStore({ vehicleList: data.results }));
+			},
+
+			setHome: status => {
+				setStore({ isHome: status });
+			},
+
+			setFavs: fav => {
 				const store = getStore();
-
-				//we have to loop the entire demo array to look for the respective index
-				//and change its color
-				const demo = store.demo.map((elm, i) => {
-					if (i === index) elm.background = color;
-					return elm;
-				});
-
-				//reset the global store
-				setStore({ demo: demo });
+				setStore({ favList: [...store.favList, fav] });
 			}
 		}
 	};

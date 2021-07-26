@@ -1,15 +1,31 @@
-import React from "react";
-import rigoImage from "../../img/rigo-baby.jpg";
+import React, { useEffect, useContext } from "react";
+import { Context } from "../store/appContext";
+import { Characters } from "./characters";
+import { Vehicles } from "./vehicles";
+import { Planets } from "./planets";
 import "../../styles/home.scss";
 
-export const Home = () => (
-	<div className="text-center mt-5">
-		<h1>Hello Rigo!</h1>
-		<p>
-			<img src={rigoImage} />
-		</p>
-		<a href="#" className="btn btn-success">
-			If you see this green button, bootstrap is working
-		</a>
-	</div>
-);
+export const Home = () => {
+	const { store, actions } = useContext(Context);
+
+	useEffect(() => {
+		actions.setHome(true);
+		console.log("home: ", store.isHome);
+	}, []);
+
+	console.log("Favorite List ", store.favList);
+
+	return (
+		<div className="container">
+			<div className="row">
+				<Characters />
+			</div>
+			<div className="row">
+				<Vehicles />
+			</div>
+			<div className="row">
+				<Planets />
+			</div>
+		</div>
+	);
+};
