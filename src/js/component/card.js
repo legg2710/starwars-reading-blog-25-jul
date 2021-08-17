@@ -21,10 +21,10 @@ export const Card = props => {
 						})}
 					</div>
 					<div className="row justify-content-between">
-						<a href={props.link} className="btn btn-primary" style={{ color: "#fff" }}>
+						<a href={props.link} className="btn btn-dark" style={{ color: "#fff" }}>
 							Read More
 						</a>
-						<button onClick={() => actions.setFavs(props.title)} className="btn btn-warning ml-a">
+						<button onClick={() => actions.setFavs(props.title)} className="btn btn-outline-warning ml-a">
 							<i className="far fa-heart" />
 						</button>
 					</div>
