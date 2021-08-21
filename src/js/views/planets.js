@@ -30,7 +30,7 @@ export const Planets = () => {
 							key={index}
 							url="http://atrilco.com/wp-content/uploads/2017/11/ef3-placeholder-image.jpg"
 							title={item.name}
-							link={"https://swapi.dev/api/planets/" + linkUrl}
+							link={"https://www.swapi.tech/api/planets/3" + linkUrl}
 							contenido={dataPlanet}
 						/>
 					);

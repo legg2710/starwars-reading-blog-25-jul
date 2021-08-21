@@ -38,7 +38,7 @@ export const Characters = () => {
 							key={index}
 							url="http://atrilco.com/wp-content/uploads/2017/11/ef3-placeholder-image.jpg"
 							title={item.name}
-							link={"https://swapi.dev/api/people/" + linkUrl}
+							link={"https://www.swapi.tech/api/people/1" + linkUrl}
 							contenido={dataPerson}
 						/>
 					);
