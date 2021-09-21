@@ -25,13 +25,12 @@ export const Vehicles = () => {
 						}
 					];
 					let linkUrl = index + 1;
-
 					return (
 						<Card
 							key={index}
 							url="http://atrilco.com/wp-content/uploads/2017/11/ef3-placeholder-image.jpg"
 							title={item.name}
-							link={" https://www.swapi.tech/api/starships/9" + linkUrl}
+							link={"https://www.swapi.tech/api/starships/9" + linkUrl}
 							contenido={dataVehicle}
 						/>
 					);

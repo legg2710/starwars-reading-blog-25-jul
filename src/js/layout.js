@@ -1,8 +1,8 @@
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import ScrollToTop from "./component/scrollToTop";
-
 import { Home } from "./views/home";
+
+import ScrollToTop from "./component/scrollToTop";
 import { Characters } from "./views/characters.js";
 import { Planets } from "./views/planets.js";
 import { Vehicles } from "./views/vehicles.js";

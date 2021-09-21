@@ -15,7 +15,7 @@ export const Characters = () => {
 	return (
 		<div className="container">
 			<h1>Characters</h1>
-			<div className={(store.isHome = true ? "row flex-row flex-nowrap overflow-auto" : "row")}>
+			<div className={store.isHome === true ? "row flex-row flex-nowrap overflow-auto" : "row"}>
 				{store.peopleList.map((item, index) => {
 					const dataPerson = [
 						{
